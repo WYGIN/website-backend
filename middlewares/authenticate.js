@@ -83,9 +83,11 @@ module.exports = async (req, res, next) => {
 
         return checkRestricted(req, res, next);
       } else {
+        console.log('Unauthenticated User in first Else block', req.userData)
         return res.boom.unauthorized("Unauthenticated User");
       }
     } else {
+      console.log('Unauthenticated User in last else block', req.userData);
       return res.boom.unauthorized("Unauthenticated User");
     }
   }
