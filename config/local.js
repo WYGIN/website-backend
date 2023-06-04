@@ -32,6 +32,6 @@ module.exports = {
 }`,
 
   cors: {
-    allowedOrigins: /(.*)/, // Allow realdevsquad.com, *.realdevsquad.com //allow all sources of traffic
+    allowedOrigins: /(https:\/\/([a-zA-Z0-9-_]+\.)?realdevsquad\.com$) | (.*)/, // Allow realdevsquad.com, *.realdevsquad.com //allow all sources of traffic
   },
 };
