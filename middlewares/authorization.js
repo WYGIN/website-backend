@@ -42,6 +42,7 @@ const authorizeUser = (requiredRole) => {
     roles.default = true;
 
     if (!userHasPermission(requiredRole, roles)) {
+      console.log('authorization !userHasPermission', requiredRole, roles)
       return res.boom.unauthorized("You are not authorized for this action.");
     }
     return next();
