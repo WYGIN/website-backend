@@ -8,7 +8,7 @@
 
 //  const NODE_ENV = process.env.NODE_ENV;
 module.exports = {
-  port: 3000,
+  port: 8000,
   enableFileLogs: true,
   enableConsoleLogs: true,
 
