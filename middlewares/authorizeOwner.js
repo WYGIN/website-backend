@@ -21,12 +21,15 @@ module.exports = async (req, res, next) => {
     const { username } = req.userData;
 
     if (accountOwners.some((owner) => owner.username === username)) {
+      console.log('authorizeOwner owner: ', req.userData)
       return next();
     } else {
+      console.log('authorizedOwner error: ', req.userData)
       return res.boom.forbidden("Unauthorized User");
     }
   } catch (err) {
     logger.error(err);
+    console.log('authorizedOwner catch: ', err)
     return res.boom.badImplementation("Something went wrong please contact admin");
   }
 };
