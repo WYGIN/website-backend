@@ -1,6 +1,7 @@
 const createError = require("http-errors");
 const express = require("express");
 const { isMulterError, multerErrorHandling } = require("./utils/multer");
+const cors = require("cors");
 
 // Attach response headers
 const responseHeaders = require("./middlewares/responseHeaders");
@@ -16,6 +17,10 @@ const app = express();
 // Add Middlewares, routes
 AppMiddlewares(app);
 app.use("/", responseHeaders, indexRouter);
+
+app.use(cors({
+    origin: '*'
+}));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
