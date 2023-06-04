@@ -13,7 +13,7 @@ const githubAuth = (req, res, next) => {
   let userData;
   const rdsUiUrl = new URL(config.get("services.rdsUi.baseUrl"));
   let authRedirectionUrl = 'http://8000-wygin-websitebackend-tqf7xjfehsf.ws-us98.gitpod.io/auth/github/callback' // rdsUiUrl; // req.query.state ?? rdsUiUrl;
-  console.log('github got authredirecturi: ', authRedirectionUri)
+  console.log('github got authredirecturi: ', authRedirectionUrl)
   logger.error(req.query.state);
 
   try {
