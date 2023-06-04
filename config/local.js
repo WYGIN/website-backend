@@ -6,7 +6,7 @@
  * Documentation: https://github.com/lorenwest/node-config/wiki/Configuration-Files
  */
 
-const NODE_ENV = process.env.NODE_ENV;
+//const NODE_ENV = process.env.NODE_ENV;
 module.exports = {
   port: 3000,
   enableFileLogs: true,
@@ -34,5 +34,4 @@ module.exports = {
   cors: {
     allowedOrigins: /(.*)/, // Allow realdevsquad.com, *.realdevsquad.com //allow all sources of traffic
   },
-
 };
