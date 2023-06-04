@@ -20,7 +20,7 @@ const githubAuth = (req, res, next) => {
     return passport.authenticate("github", { session: false }, async (err, accessToken, user) => {
       if (err) {
         logger.error(err);
-        console.log('auth error github:', '\ncurrent redirect uri\n', req.getRedirectUri('github') , '\ngot error\n', err)
+        console.log('auth error github:', '\ncurrent redirect uri\n', user, accessToken , '\ngot error\n', err)
         return res.boom.unauthorized("User cannot be authenticated");
       }
 
