@@ -33,7 +33,7 @@ module.exports = {
   
   services: { 
     rdsApi: { 
-      baseUrl: `http://localhost:${port}`, 
+      baseUrl: `http://localhost:3000`, 
     }, 
     discordBot: { 
       baseUrl: "DISCORD_BASE_URL", 
