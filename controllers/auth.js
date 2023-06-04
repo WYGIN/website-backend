@@ -13,7 +13,7 @@ const githubAuth = (req, res, next) => {
   let userData;
   const rdsUiUrl = new URL(config.get("services.rdsUi.baseUrl"));
   let authRedirectionUrl = rdsUiUrl; // req.query.state ?? rdsUiUrl;
-  console.log('github state param: ', req.query.state)
+  console.log('github got authredirecturi: ', authRedirectionUri)
   logger.error(req.query.state);
 
   try {
@@ -46,7 +46,7 @@ const githubAuth = (req, res, next) => {
       });
 
       if (incompleteUserDetails) authRedirectionUrl = config.get("services.rdsUi.baseUrl"); // "https://my.realdevsquad.com/new-signup";
-      console.log('github login above login', authRedirectionUrl)
+      console.log('github login above return', authRedirectionUrl)
       return res.redirect(authRedirectionUrl);
     })(req, res, next);
   } catch (err) {
