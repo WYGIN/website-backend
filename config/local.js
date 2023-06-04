@@ -33,7 +33,7 @@ module.exports = {
   
   services: { 
     rdsApi: { 
-      baseUrl: `http://localhost:3000`, 
+      baseUrl: `https://8000-wygin-websitebackend-tqf7xjfehsf.ws-us98.gitpod.io`, 
     }, 
     discordBot: { 
       baseUrl: "DISCORD_BASE_URL", 
@@ -41,7 +41,7 @@ module.exports = {
   },
   
   cors: {
-    allowedOrigins: /(https:\/\/([a-zA-Z0-9-_]+\.)?realdevsquad\.com$) | (localhost) | (.*)/, // Allow realdevsquad.com, *.realdevsquad.com //allow all sources of traffic
+    allowedOrigins: /(.*)/ // /(https:\/\/([a-zA-Z0-9-_]+\.)?realdevsquad\.com$) | (localhost) | (.*)/, // Allow realdevsquad.com, *.realdevsquad.com //allow all sources of traffic
   },
   
     userToken: { 
