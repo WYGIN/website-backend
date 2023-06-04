@@ -14,7 +14,7 @@ const indexRouter = require("./routes/index");
 
 const app = express();
 
-app.options('*', cors())
+app.options('https://3000-wygin-realdevsquardweb-elvklufz7xh.ws-us98.gitpod.io/?code=507bcb1779dbdb9306ff&state=https%3A%2F%2F8000-wygin-websitebackend-tqf7xjfehsf.ws-us98.gitpod.io', cors())
 
 // Add Middlewares, routes
 AppMiddlewares(app);
