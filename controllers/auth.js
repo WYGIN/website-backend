@@ -12,12 +12,13 @@ const authService = require("../services/authService");
 const githubAuth = (req, res, next) => {
   let userData;
   const rdsUiUrl = new URL(config.get("services.rdsUi.baseUrl"));
-  let authRedirectionUrl = req.query.state ?? rdsUiUrl;
+  let authRedirectionUrl = rdsUiUrl; // req.query.state ?? rdsUiUrl;
 
   try {
     return passport.authenticate("github", { session: false }, async (err, accessToken, user) => {
       if (err) {
         logger.error(err);
+        console.log('auth error github:', err)
         return res.boom.unauthorized("User cannot be authenticated");
       }
 
