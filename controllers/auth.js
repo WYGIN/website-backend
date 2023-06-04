@@ -13,6 +13,8 @@ const githubAuth = (req, res, next) => {
   let userData;
   const rdsUiUrl = new URL(config.get("services.rdsUi.baseUrl"));
   let authRedirectionUrl = rdsUiUrl; // req.query.state ?? rdsUiUrl;
+  console.log('github state param: ', req.query.state)
+  logger.error(req.query.state);
 
   try {
     return passport.authenticate("github", { session: false }, async (err, accessToken, user) => {
@@ -43,12 +45,13 @@ const githubAuth = (req, res, next) => {
         sameSite: "lax",
       });
 
-      if (incompleteUserDetails) authRedirectionUrl = "https://my.realdevsquad.com/new-signup";
-
+      if (incompleteUserDetails) authRedirectionUrl = config.get("services.rdsUi.baseUrl"); // "https://my.realdevsquad.com/new-signup";
+      console.log('github login above login', authRedirectionUrl)
       return res.redirect(authRedirectionUrl);
     })(req, res, next);
   } catch (err) {
     logger.error(err);
+    console.log('github login catch error: ', err)
     return res.boom.unauthorized("User cannot be authenticated");
   }
 };
