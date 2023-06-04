@@ -10,7 +10,7 @@
 module.exports = {
   port: 3000,
   enableFileLogs: true,
-  enableConsoleLogs: false,
+  enableConsoleLogs: true,
 
   githubOauth: {
     clientId: "2bfae6ca8d1170ab6ddd",
