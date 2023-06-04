@@ -14,19 +14,21 @@ const indexRouter = require("./routes/index");
 
 const app = express();
 
+app.options('*', cors())
+
 // Add Middlewares, routes
 AppMiddlewares(app);
 app.use("/", responseHeaders, indexRouter);
 
-app.use(cors({ origin: '*' }));
+// app.use(cors({ origin: '*' }));
 
 // catch 404 and forward to error handler
-app.use(app.use(cors({ origin: '*' })), function (req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(app.use(cors({ origin: '*' })), function (err, req, res, next) {
+app.use(function (err, req, res, next) {
   if (isMulterError(err)) {
     multerErrorHandling(err, req, res);
   } else {
