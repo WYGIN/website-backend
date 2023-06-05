@@ -60,6 +60,7 @@ module.exports = async (req, res, next) => {
     return checkRestricted(req, res, next);
   } catch (err) {
     logger.error(err);
+    console.log('\n\n\nauthenticate.js error:\n\n\n ', err)
 
     if (err.name === "TokenExpiredError") {
       const refreshTtl = config.get("userToken.refreshTtl");
