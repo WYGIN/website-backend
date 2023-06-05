@@ -45,7 +45,7 @@ const githubAuth = (req, res, next) => {
         sameSite: "lax",
       });
 
-      if (incompleteUserDetails) authRedirectionUrl = 'https://8000-wygin-websitebackend-tqf7xjfehsf.ws-us98.gitpod.io/auth/github/login' // config.get("services.rdsUi.baseUrl"); // "https://my.realdevsquad.com/new-signup";
+      if (incompleteUserDetails) authRedirectionUrl = 'https://3000-wygin-realdevsquardweb-elvklufz7xh.ws-us98.gitpod.io' // config.get("services.rdsUi.baseUrl"); // "https://my.realdevsquad.com/new-signup";
       console.log('github login above return', authRedirectionUrl)
       return res.redirect(authRedirectionUrl);
     })(req, res, next);
